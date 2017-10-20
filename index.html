@@ -1,1 +1,496 @@
-<h1>Hello world</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Massa</title>
+  <meta name="description" content="Mass.fi University project">
+  <meta name="author" content="Calum Flanagan">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="https://fonts.googleapis.com/css?family=Titillium+Web:300,400" rel="stylesheet">
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+  <link rel="stylesheet" href="css/sass.min.css"
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
+</head>
+<body>
+    <header>
+      <div class="row">
+        <div class="twelve columns">
+          <h1>Massa</h1>
+        </div>
+      </div>
+    </header>
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class="container" role="main">
+    <section class="row">
+      <article class="three columns">
+        <p>Click image for larger view</p>
+        <img src="images/product.png" class="product-img" id="mainProduct" alt="Product image" role="image">
+
+        <div id="productModal" class="modal">
+          <span class="close">&times;</span>
+          <img class="modal-content" id="modalImg" alt="product modal image" role="modal">
+          <div id="caption"></div>
+        </div>
+      </article>
+
+      <article class="five columns">
+        <h2>Massa Recovery</h2>
+        <form class="options segment">
+          <div class="row">
+            <div class="four columns">
+              <p>Maku</p>
+            </div>
+            <div class="eight columns">
+              <input type="button" class="option" id="option1" value="Appelsiini Cream">
+              <input type="button" class="option" id="option2" value="Mansikka">
+              <input type="button" class="option" id="option3" value="Suklaa">
+              <input type="button" class="option" id="option4" value="Suklaa Minttu">
+              <input type="button" class="option" id="option5" value="Vanilja">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="four columns">
+              <p>Pakkaus</p>
+            </div>
+            <div class="eight columns">
+              <input type="button" class="option" id="packaging1" value="Pussi">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="four columns">
+              <p>Määrä</p>
+            </div>
+            <div class="eight columns">
+              <input type="button" class="option" id="size1" value="2.5KG">
+              <input type="button" class="option" id="size2" value="5KG">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="four columns">
+              <label><p>Lukumaara</p></label>
+            </div>
+            <div class="seven columns quantity">
+              <input class="plusMinus" type="button" onclick="decrementValue()" name="decrement" value=&minus;>
+              <input type="text" id="number" name="Lukumaara" value="1">
+              <input class="plusMinus" type="button" onclick="incrementValue()" name="increment" value=&plus;>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="twelve columns">
+              <h3 class="totalPrice" id="totalPrice1">Hinta: €38.99</h3>
+              <h3 class="totalPrice" id="totalPrice2">Hinta: €72.99</h3>
+              <p>(per pussi)</p>
+            </div>
+            <div class="twelve columns">
+              <button class="button-primary" type="submit">Lisää ostoskoriin</button>
+            </div>
+          </div>
+        </form><!--end options-->
+      </article>
+
+      <article class="four columns">
+        <div class="row mini-rating">
+          <img src="images/stars.png" alt="rating" role="image">
+          <a href="#">353 Arvostelut</a>
+        </div>
+
+        <div class="row benifits">
+          <div class="row">
+            <div class="two columns">
+              <img src="images/tick.png" alt="Benifit bullet point" role="image">
+            </div>
+            <div class="ten columns">
+              <p>Tehostaa palautumista</p>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="two columns">
+              <img src="images/tick.png" alt="Benifit bullet point" role="image">
+            </div>
+            <div class="ten columns">
+              <p>Edesauttaa lihaskasvua</p>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="two columns">
+              <img src="images/tick.png" alt="Benifit bullet point" role="image">
+            </div>
+            <div class="ten columns">
+              <p>Sisältää laadukasta heraproteiinia</p>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="two columns">
+              <img src="images/tick.png" alt="Benifit bullet point" role="image">
+            </div>
+            <div class="ten columns">
+              <p>Sisältää nopeita hiilihydraatteja (maltodekstriini, dekstroosi)</p>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="two columns">
+              <img src="images/tick.png" alt="Benifit bullet point" role="image">
+            </div>
+            <div class="ten columns">
+              <p>Sisältää runsaasti lihaskasvulle tärkeitä haaraketjuisia aminohappoja (BCAA) ja glutamiinia</p>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="two columns">
+              <img src="images/tick.png" alt="Benifit bullet point" role="image">
+            </div>
+            <div class="ten columns">
+              <p>Massiiviset 71 annosta per pakkaus</p>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section class="row">
+      <div class="segment information">
+        <input type="button" class="option" id="overviewButton" value="YLEISTÄ">
+        <input type="button" class="option" id="manualButton" value="KÄYTTÖOHJE">
+        <input type="button" class="option" id="ingredientsButton" value="AINESOSAT">
+        <input type="button" class="option" id="infoButton" value="RAVINTOSISÄLTÖ">
+        <input type="button" class="option" id="reviewButton" value="ARVOSTELE">
+        <input type="button" class="option" id="returnsButton" value="TOIMITUKSET &amp; PALAUTUKSET">
+
+        <hr>
+
+        <article id="overview">
+          <h4>Yleistä</h4>
+          <p>Mass Recovery on laadukas palautusjuomajauhe ja yksi myydyimmistä tuotteistamme. Palautumisjuoma on yksi tärkeimmistä urheilijan lisäravinteista. Palautumisjuomaa tarvitsee myös arkiliikuntaa suorittava henkilö, mikäli treeni on kuluttavaa ja tehokasta. Palautumisjuoma sisältää ainesosia, mitä kehomme tarvitsee välittömästi treenin jälkeen.</p>
+
+          <p>Palautuminen on tärkeä osa treeniä. Kehitys tapahtuu levossa, kehomme korjaa vaurioituneita lihaskudoksia juuri levossa. Mitä nopeampi ja tehokkaampi palautuminen, sitä paremmat tulokset. Panosta palautumiseen ja palautumisjuomaan!</p>
+
+          <p>Tätä hinta:laatu-suhdetta ei ihan heti lyödä laudalta.</p>
+
+          <h5>MASS RECOVERY – Palautumisjauomasekoitus</h5>
+
+          <p>Mass Recovery on sekoitus</p>
+
+          <ul>
+            <li>heraproteiinikonsentraattia</li>
+            <li>hydrolysoitua heraproteiinia</li>
+            <li>aminohappoja (BCAA, leusiini, isoleusiini, valiini)</li>
+            <li>kreatiinimonohydraattia.</li>
+            <li>Hiilihydraatteina palautusjuomassa on maltodekstriini ja dektroosi.</li>
+          </ul>
+
+          <p>Jokainen annos Mass Recovery:a sisältää yli 28g proteiinia, joka tukee lihasmassan ylläpitoa ja kasvua. Jokaisessa annoksessa on kreatiinimonohydraattia 3.5g, joka tehostaa fyysisen suorituksen tehoa ja räjähtävyyttä.</p>
+
+          <h5>PALAUTUMISJUOMAN KÄYTTÖ</h5>
+
+          <p>Mass Recovery palautumisjuoma on valmis sekoitus palautumiseen. Palautumisjuoma korkealla proteiinipitoisuudella, nopeilla hiilihydraateilla sekä lihaskasvulle tärkeillä aminohapoilla.</p>
+
+          <p>Palautusjuomajauheen nopeat hiilihydraatit imeytyvät nopeasti tehostaen palautumista. Nopeita hiilihydraatteja tarvitaan käytettyjen energiavarastojen nopeaan täyttämiseen. Treenin aikana tai lopussa käytettynä nopeat hiilihydraatit antavat myös nopeasti energiaa ja tehoa viimeisiin harjoitteisiin!</p>
+
+          <h5>LAATU &amp; VALMISTUS</h5>
+
+          <p>Erinomainen maku, sekoittuvuus ja laatu on pitkän tutkimus- ja kehitystyön tulosta.</p>
+
+          <p>Parhaan hyödyn saavuttamiseksi nauti palautusjuoma välittömästi treenin jälkeen. Voit myös nauttia juomaa välipalana turvataksesi riittävän proteiinin saannin.</p>
+
+          <h5>TIEDOKSI ALLERGISILLE</h5>
+
+          <p>Sisältää maitoa ja soijalesitiiniä (emulgointiaine).</p>
+        </article>
+
+        <article id="manual">
+          <h4>Käyttöohje</h4>
+          <p>Sekoita 2 annosmitallista (70 g) jauhetta 200-300 ml:aan kylmää vettä tai maitoa. Nauti 1-2 annosta päivässä, esimerkiksi yksi välittömästi treenin jälkeen, toinen aterioiden välillä tai aamiaisella.<p>
+
+          <h5>SÄILYTYSOHJE</h5>
+
+          <p>Säilytetään kuivassa ja viileässä.</p>
+        </article>
+
+        <article id="ingredients">
+          <h4>Ainesosat</h4>
+
+          <h5>Chocolate **UUSI KOOSTUMUS**</h5>
+          <p>Mass Recovery Protein Blend (heraproteiinikonsentraatti ja -hydrolysaatti, BCAA (L-leusiini, L-isoleusiini, L-valiini)), maltodekstriini, kaakaojauhe, kreatiinimonohydraatti, dekstroosi, kauratärkkelys, aromi, makeutusaine (asesulfaamikalium, sukraloosi), emulgointiaine (soijalesitiini).</p>
+
+          <h5>Chocolate Mint **UUSI KOOSTUMUS**</h5>
+          <p>Mass Recovery Protein Blend (heraproteiinikonsentraatti ja -hydrolysaatti, BCAA (L-leusiini, L-isoleusiini, L-valiini)), maltodekstriini, kaakaojauhe, kreatiinimonohydraatti, dekstroosi, kauratärkkelys, aromi, makeutusaine (asesulfaamikalium, sukraloosi), emulgointiaine (soijalesitiini).</p>
+
+          <h5>Strawberry **UUSI KOOSTUMUS**</h5>
+          <p>Mass Recovery Protein Blend (heraproteiinikonsentraatti ja -hydrolysaatti, BCAA (L-leusiini, L-isoleusiini, L-valiini)), maltodekstriini, kreatiinimonohydraatti, dekstroosi, kauratärkkelys, väri (punajuuriväri), aromi, happamuudensäätöaine (sitruunahappo), makeutusaine (asesulfaamikalium, sukraloosi), emulgointiaine (soijalesitiini).</p>
+
+          <h5>Vanilla **UUSI KOOSTUMUS**</h5>
+          <p>Mass Recovery Protein Blend (heraproteiinikonsentraatti ja -hydrolysaatti, BCAA (L-leusiini, L-isoleusiini, L-valiini)), maltodekstriini, kreatiinimonohydraatti, dekstroosi, kauratärkkelys, aromi, väri (kurkumiini), makeutusaine (asesulfaamikalium, sukraloosi), emulgointiaine (soijalesitiini).</p>
+        </article>
+
+        <article id="info">
+          <h4>Ravintosisältö</h4>
+          <table align="center">
+          	<thead>
+          		<tr>
+          			<td>&nbsp;</td>
+          			<td><strong>Per Annos</strong></td>
+          		</tr>
+          	</thead>
+          	<tbody>
+          		<tr>
+          			<td><strong>Energiaa</strong></td>
+          			<td>1119 kJ / 264 kcal</td>
+          		</tr>
+          		<tr>
+          			<td><strong>Rasvaa</strong></td>
+          			<td>0.02</td>
+          		</tr>
+          		<tr>
+          			<td><strong>josta tyydyttyneitä rasvahappoja</strong></td>
+          			<td>0.8 g</td>
+          		</tr>
+          		<tr>
+          			<td><strong>Hiilihydraatteja</strong></td>
+          			<td>30 g</td>
+          		</tr>
+          		<tr>
+          			<td><strong>joista sokereita</strong></td>
+          			<td>3.2 g</td>
+          		</tr>
+          		<tr>
+          			<td><strong>Proteiinia</strong></td>
+          			<td>31 g</td>
+          		</tr>
+          		<tr>
+          			<td><strong>Suolaa</strong></td>
+          			<td>0.18 g</td>
+          		</tr>
+          		<tr>
+          			<td><strong>Kreatiinimonohydraatti</strong></td>
+          			<td>3.5 g</td>
+          		</tr>
+          		<tr>
+          			<td><strong>L-Leusiini</strong></td>
+          			<td>0.35 g</td>
+          		</tr>
+          		<tr>
+          			<td><strong>L-Isoleusiini</strong></td>
+          			<td>0.18 g</td>
+          		</tr>
+          		<tr>
+          			<td><strong>L-Valiini</strong></td>
+          			<td>0.18 g</td>
+          		</tr>
+          	</tbody>
+          </table>
+        </article>
+
+        <article id="reviews">
+          <h4>Arvostele</h4>
+          <div class="review">
+            <h5>Good</h5>
+
+            <h5>Yhteensä: *****</h5>
+            <p>Tämä toimii. Nautin kyseisen tuotteen maidon kera. Ja kun tätä nauttii heti treenin jälkeen, palautuu virta kehoon eikä tarvitse heti kotiin tultua juosta nälissään ruokakaapille. Suosittelen.</p>
+
+            <p>20 March 2017 mukaan Ansku</p>
+          </div>
+
+          <div class="review">
+            <h5>Good</h5>
+
+            <h5>Yhteensä: ****</h5>
+            <p>Tämä toimii. Nautin kyseisen tuotteen maidon kera. Ja kun tätä nauttii heti treenin jälkeen, palautuu virta kehoon eikä tarvitse heti kotiin tultua juosta nälissään ruokakaapille. Suosittelen.</p>
+
+            <p>20 March 2017 mukaan Ansku</p>
+          </div>
+
+          <div class="review">
+            <h5>Good</h5>
+
+            <h5>Yhteensä: *****</h5>
+            <p>Tämä toimii. Nautin kyseisen tuotteen maidon kera. Ja kun tätä nauttii heti treenin jälkeen, palautuu virta kehoon eikä tarvitse heti kotiin tultua juosta nälissään ruokakaapille. Suosittelen.</p>
+
+            <p>20 March 2017 mukaan Ansku</p>
+          </div>
+
+          <div class="review">
+            <h5>Good</h5>
+
+            <h5>Yhteensä: ****</h5>
+            <p>Tämä toimii. Nautin kyseisen tuotteen maidon kera. Ja kun tätä nauttii heti treenin jälkeen, palautuu virta kehoon eikä tarvitse heti kotiin tultua juosta nälissään ruokakaapille. Suosittelen.</p>
+
+            <p>20 March 2017 mukaan Ansku</p>
+          </div>
+        </article>
+
+        <article id="returns">
+          <h4>Toimitukset &amp; Palautukset</h4>
+          <h5>Mikä on toimituksen kesto?</h5>
+
+          Tarkista tuotteen saatavuus tilausta tehdessäsi. Tämä tuote on: Varastossa | Lähetetään yleensä 24 tunnin sisällä
+
+          Muista lisätä postin toimitusaika (3-5 arkipäivää) saadaksesi arvion tuotteen saapumisesta.
+
+          <h5>Miten tiedän onko tilaus toimituksessa?</h5>
+
+          Saat sähköpostitse varmistuksen kun lähetämme tilauksesi
+
+          Voit tarkistaa tilauksesi tai yksittäisten tuotteiden tilan tarkistamalla käyttäjätilisi tiedot ja seuraamalla ohjeita
+
+          Pyydämme asiakkaitamme ystävällisesti odottamaan 10 arkipäivää tuotteen lähetyksestä ennen yhteydenottoa myöhäisestä toimituksesta.
+
+          Suosittelemme tarkistamaan mikäli tilaus on jätetty naapurillesi tai lähimpään postiin sillä kokonsa vuoksi tilausta ei ole välttämättä mahdollista jättää postilaatikkoon.
+
+          <h5>Mitä voin tehdä mikäli en ole täysin tyytyväinen tilaukseen?</h5>
+
+          Tarkista palautusehtomme.
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <article>
+        <h6>Asiakkaat jotka ostivat tämän tuotteen ostivat myös:</h6>
+        <div class="row">
+          <div class="three columns related">
+            <img src="images/product2.png" class="product-img" alt="Product image" role="image">
+            <p>Massa Vitamins</p>
+            <img src="images/stars.png" class="rating" alt="related product rating" role="image">
+            <p>€10.99</p>
+            <button><a href="#">Lisää infoa</a></button>
+          </div>
+
+          <div class="three columns related">
+            <img src="images/product2.png" class="product-img" alt="Product image" role="image">
+            <p>Massa Protien Blend</p>
+            <img src="images/stars.png" class="rating" alt="related product rating" role="image">
+            <p>€25.99</p>
+            <button><a href="#">Lisää infoa</a></button>
+          </div>
+
+          <div class="three columns related">
+            <img src="images/product2.png" class="product-img" alt="Product image" role="image">
+            <p>Massa Whey</p>
+            <img src="images/stars.png" class="rating" alt="related product rating" role="image">
+            <p>€35.99</p>
+            <button><a href="#">Lisää infoa</a></button>
+          </div>
+
+          <div class="three columns related">
+            <img src="images/product2.png" class="product-img" alt="Product image" role="image">
+            <p>Massa Omega 2</p>
+            <img src="images/stars.png" class="rating" alt="related product rating" role="image">
+            <p>€14.99</p>
+            <button><a href="#">Lisää infoa</a></button>
+          </div>
+        </div>
+      <article>
+    </section>
+  </div><!--End container-->
+
+  <footer>
+    <p>© 2017 Calum Flanagan</p>
+  </footer>
+
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+  <script src="js/buttons.min.js"></script>
+  <script src="js/tabs.min.js"></script>
+  <script>
+    /**
+    * Gabe Calabro
+    * http://stackoverflow.com/users/106403/gabe
+    * http://jsfiddle.net/7va04ehz/
+    */
+
+    /*
+    * Two functions for incrementing and decrementing the
+    * quantity value.
+
+    * These functions are assigned to the corresponding
+    * buttons in the HTMl, inside the psuedo class 'onclick'.
+
+    * When the button is clicked, the corresponding function
+    * is fired.
+    */
+
+    function incrementValue()
+    {
+        var value = parseInt(document.getElementById('number').value, 10);
+        value = isNaN(value) ? 0 : value;
+        value++;
+        document.getElementById('number').value = value;
+    }
+
+    function decrementValue()
+    {
+        var value = parseInt(document.getElementById('number').value, 10);
+        value = isNaN(value) ? 0 : value;
+        value--;
+        document.getElementById('number').value = value;
+    }
+  </script>
+
+  <script>
+    // Insert modal into a variable for ease of use
+    var modal = document.getElementById('productModal');
+
+    /*
+    * Put the image inside a variable.
+    * When image is clicked, the modal opens.
+    * Insert image inside the modal and use the "alt"
+    * text as the caption.
+    */
+    var img = document.getElementById('mainProduct');
+    var modalImg = document.getElementById("modalImg");
+    var captionText = document.getElementById("caption");
+    img.onclick = function(){
+      // When image is clicked do the following
+        modal.style.display = "block";
+      //use the same src as the image
+        modalImg.src = this.src;
+      // use he alt text as the caption for the image
+        captionText.innerHTML = this.alt;
+    }
+
+    /*
+    * Place the <span> element inside a variable,
+    * that closes the modal
+    */
+    var close = document.getElementsByClassName("close")[0];
+
+    /*
+    * When the user clicks on <span> (x), hide the modal
+    * using display none.
+    */
+    close.onclick = function() {
+        modal.style.display = "none";
+    }
+  </script>
+</body>
+</html>
